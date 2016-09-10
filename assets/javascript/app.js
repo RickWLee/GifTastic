@@ -2,18 +2,37 @@ $(document).ready(function() {
 
 //set array for animal
 	var topics= ['bird', 'dog', 'cat', 'monkey', 'fox', 'lion','tiger'];
-
+	
 	// Loops through the array of array animal
+	function renderButtons(){
+		$('#animalsButtons').empty();
 		for (var i = 0; i < topics.length; i++){
-			// Then dynamicaly generates buttons for each movie in the array
-			// Note the jQUery syntax here... 
+			
+
 		    var a = $('<button>'); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
 		    a.addClass('livething'); // Added a class 
 		    a.attr('data-name', topics[i]); // Added a data-attribute
 		    a.text(topics[i]); // Provided the initial button text
 		    $('#animalsButtons').append(a); // Added the button to the HTML
 		};
+	}
 	
+	$('#addAnimal').on('click', function(){
+	
+		// This line of code will grab the input from the textbox
+		var topic = $('#animal-input').val().trim();
+
+		// The movie from the textbox is then added to our array
+		topics.push(topic);
+
+		// Our array then runs which handles the processing of our movie array
+		renderButtons();
+
+		// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
+		return false;
+	})
+	
+	renderButtons();
 	//not understanding about Buttons function at all... all this is pretty much cut paste and written by someone else.
 	//no idea about function at all.
 
@@ -60,7 +79,6 @@ $(document).ready(function() {
 						gifDiv.append(personImage);
 		                gifDiv.append(p);
 		                
-		             
 
 		        		$('#animals').prepend(gifDiv);
 
