@@ -1,7 +1,7 @@
 $(document).ready(function() { 
 
 //set array for animal
-	var topics= ['bird', 'dog', 'cat', 'monkey', 'fox', 'lion','tiger','elephant'];
+	var topics= ['bird', 'dog', 'cat', 'monkey', 'fox', 'lion','tiger','elephant','cow','deer','rabbit','mouse','snake','horse','sheep','chicken','pig','panda','wolf','chick'];
 	
 	// Loops through the array of array animal
 	function renderButtons(){
