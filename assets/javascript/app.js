@@ -19,9 +19,8 @@ $(document).ready(function() {
 
 		};
 	}
-	
+	$('#addAnimal').addClass('btn btn-primary');
 	$('#addAnimal').on('click', function(){
-	
 		var topic = $('#animal-input').val().trim();
 		topics.push(topic);
 		renderButtons();
