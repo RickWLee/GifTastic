@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
   // Initial array of movies
-	var animals= ['bird', 'dog', 'cat', 'monkey', 'fox'];
+	var topics= ['bird', 'dog', 'cat', 'monkey', 'fox'];
 
 	
 
@@ -16,13 +16,13 @@ $(document).ready(function() {
 		
 
 		// Loops through the array of array animal
-		for (var i = 0; i < animals.length; i++){
+		for (var i = 0; i < topics.length; i++){
 			// Then dynamicaly generates buttons for each movie in the array
 			// Note the jQUery syntax here... 
 		    var a = $('<button>'); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
 		    a.addClass('livething'); // Added a class 
-		    a.attr('data-name', animals[i]); // Added a data-attribute
-		    a.text(animals[i]); // Provided the initial button text
+		    a.attr('data-name', topics[i]); // Added a data-attribute
+		    a.text(topics[i]); // Provided the initial button text
 		    $('#animalsButtons').append(a); // Added the button to the HTML
 		};
 	// }
@@ -35,9 +35,11 @@ $('.livething').on("click", function(){
 	$('#animals').empty();
 
 	var searchAnimal=$(this).data("name");
+
+
 	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchAnimal+"&api_key=dc6zaTOxFJmzC&limit=10";
 		
-		
+		//search under ajax
 		$.ajax({
 			url: queryURL, method: 'GET'
 			})
