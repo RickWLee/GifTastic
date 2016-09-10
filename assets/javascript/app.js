@@ -1,7 +1,7 @@
 $(document).ready(function() { 
 
 //set array for animal
-	var topics= ['bird', 'dog', 'cat', 'monkey', 'fox', 'lion','tiger'];
+	var topics= ['bird', 'dog', 'cat', 'monkey', 'fox', 'lion','tiger','elephant'];
 	
 	// Loops through the array of array animal
 	function renderButtons(){
@@ -14,28 +14,21 @@ $(document).ready(function() {
 		    a.attr('data-name', topics[i]); // Added a data-attribute
 		    a.text(topics[i]); // Provided the initial button text
  			$('#animalsButtons').append(a); // Added the button to the HTML
+			$(a).css("margin",10 + "px");//spacing between the button
 
 		};
 	}
 	
 	$('#addAnimal').on('click', function(){
 	
-		// This line of code will grab the input from the textbox
 		var topic = $('#animal-input').val().trim();
-
-		// The movie from the textbox is then added to our array
 		topics.push(topic);
-
-		// Our array then runs which handles the processing of our movie array
 		renderButtons();
-
-		// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
 		return false;
 	})
 	
 	renderButtons();
-	//not understanding about Buttons function at all... all this is pretty much cut paste and written by someone else.
-	//no idea about function at all.
+	//Still not understanding fully with buttons function.
 
 	$(document).on("click", '.livething', function(){
 
@@ -82,7 +75,9 @@ $(document).ready(function() {
 		                
 						
 		        		$('#animals').prepend(gifDiv);
-						$('div').css("float","left");
+		        		//set picture float left and with spacing
+						$(gifDiv).css("float","left");
+						$(gifDiv).css("margin",10 + "px");
 
 
 	         	}
