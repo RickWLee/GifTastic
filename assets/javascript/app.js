@@ -9,7 +9,7 @@ $(document).ready(function() {
 		for (var i = 0; i < topics.length; i++){
 			
 
-		    var a = $('<button>'); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
+		    var a = $('<button>'); // This code $('<button>') 
 		    a.addClass('livething'); // Added a class 
 		    a.addClass('btn btn-primary');//add style button from Bootstrap
 		    a.attr('data-name', topics[i]); // Added a data-attribute
@@ -55,6 +55,7 @@ $(document).ready(function() {
 
 
 		                var gifDiv = $('<div>');
+		                
 
 		                var rating = results[i].rating;
 
