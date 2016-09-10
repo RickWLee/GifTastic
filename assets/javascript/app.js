@@ -58,16 +58,41 @@ $('.livething').on("click", function(){
 	                var rating = results[i].rating;
 
 	                var p = $('<p>').text( "Rating: " + rating);
-
+ 
+	                
 	                var personImage = $('<img>');
-	                personImage.attr('src', results[i].images.fixed_height.url);
+	                	personImage.attr('src', results[i].images.fixed_height_still.url);
+
+	                	//adding pausing attribute for the gif
+	                	personImage.attr('data-still', results[i].images.fixed_height_still.url);
+	                	personImage.attr('data-animate', results[i].images.fixed_height.url);
+	                	personImage.attr('data-state','still')
+	                	personImage.attr('class','gif')
+	            
 
 	                gifDiv.append(p);
 	                gifDiv.append(personImage);
+	             
 
 	                $('#animals').prepend(gifDiv);
-	   
+
+	                //make the gif pausing or anime
+
+	          		$('.gif').on('click', function(){
+
+            			var state = $(this).attr('data-state');
+    
+            				if ( state == 'still'){
+                				$(this).attr('src', $(this).data('animate'));
+                				$(this).attr('data-state', 'animate');
+            				}else{
+                				$(this).attr('src', $(this).data('still'));
+                				$(this).attr('data-state', 'still');
+            				}
+            
+        			});
          	}
+
 		}); 
 
 	});
