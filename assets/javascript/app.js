@@ -13,7 +13,8 @@ $(document).ready(function() {
 		    a.addClass('livething'); // Added a class 
 		    a.attr('data-name', topics[i]); // Added a data-attribute
 		    a.text(topics[i]); // Provided the initial button text
-		    $('#animalsButtons').append(a); // Added the button to the HTML
+ 			$('#animalsButtons').append(a); // Added the button to the HTML
+
 		};
 	}
 	
@@ -79,8 +80,10 @@ $(document).ready(function() {
 						gifDiv.append(personImage);
 		                gifDiv.append(p);
 		                
-
+						
 		        		$('#animals').prepend(gifDiv);
+						$('div').css("float","left");
+
 
 	         	}
 	         	//make the gif pausing or animate -- this copy from other section of homework
