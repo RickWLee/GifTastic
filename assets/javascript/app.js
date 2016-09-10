@@ -11,6 +11,7 @@ $(document).ready(function() {
 
 		    var a = $('<button>'); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
 		    a.addClass('livething'); // Added a class 
+		    a.addClass('btn btn-primary');//add style button from Bootstrap
 		    a.attr('data-name', topics[i]); // Added a data-attribute
 		    a.text(topics[i]); // Provided the initial button text
  			$('#animalsButtons').append(a); // Added the button to the HTML
